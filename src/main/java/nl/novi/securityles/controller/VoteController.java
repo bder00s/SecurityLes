@@ -16,13 +16,13 @@ public class VoteController {
 
     ArrayList<String> voteList = new ArrayList<>();
 
-    @PostMapping("/add")
+    @PostMapping("/yourvote")
     public String addVote(@RequestParam String partij) {
         voteList.add(partij);
         return partij;
     }
 
-    @GetMapping("/get")
+    @GetMapping("/votings")
     public ArrayList<String> getVoteList() {
         return (voteList);
     }

@@ -55,9 +55,9 @@ public class MySecurityConfig {
                 .httpBasic()
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers( "/votes/get").hasRole("ADMIN")
+                .requestMatchers( "/votes/votings").hasRole("ADMIN")
                 //Wildcard: voor alle andere paden hoef je alleen maar ingelogd te zijn: "/**" als pad
-                .requestMatchers("votes/add").hasAnyRole("ADMIN", "USER")
+                .requestMatchers("votes/yourvote").hasAnyRole("ADMIN", "USER")
                 .anyRequest().denyAll()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
